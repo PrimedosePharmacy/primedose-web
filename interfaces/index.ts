@@ -4,7 +4,15 @@
 //
 // import { User } from 'path/to/interfaces';
 
-export type User = {
-  id: number
-  name: string
+export interface User {
+  id: number;
+  name: string;
+}
+
+export interface ButtonInterface {
+  children: React.ReactNode;
+  onClick?: () => void;
+  variant?: string; // default, primary, info, success, warning, danger, dark
+  size?: string; // sm, md, lg
+  disabled?: boolean;
 }

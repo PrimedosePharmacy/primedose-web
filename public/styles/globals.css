@@ -1,3 +1,107 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+nav a {
+  color: #a9a9a9;
+  margin: 0 12px;
+  transition: all 0.3s linear;
+}
+nav a:hover,
+nav a.active {
+  color: #fff;
+}
+nav a::after {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  display: inline-block;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: 4px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.3s cubic-bezier(0.61, 0, 0.405, 1.63);
+}
+nav a.active::after {
+  transform: scale(1);
+}
+
+@layer components {
+  .btn {
+    @apply font-bold py-2 px-4 m-2 rounded;
+  }
+  .sm {
+    @apply px-2;
+  }
+
+  .md {
+    @apply px-4;
+  }
+
+  .lg {
+    @apply px-8;
+  }
+
+  .xl {
+    @apply px-16;
+  }
+
+  /*button colors: default, primary, info, success, warning, danger, dark */
+  .default {
+    @apply bg-gray-100 text-gray-800 transition duration-300;
+  }
+  .default:hover {
+    @apply bg-gray-200 text-gray-800;
+  }
+
+  .primary {
+    @apply bg-bleed-blue text-white transition duration-300;
+  }
+  .primary:hover {
+    @apply bg-blue-600 text-white;
+  }
+
+  .success {
+    @apply bg-green-500 text-white transition duration-300;
+  }
+  .success:hover {
+    @apply bg-green-600 text-white;
+  }
+
+  .info {
+    @apply bg-blue-500 text-white transition duration-300;
+  }
+  .info:hover {
+    @apply bg-blue-600 text-white;
+  }
+
+  .warning {
+    @apply bg-yellow-400 text-white transition duration-300;
+  }
+  .warning:hover {
+    @apply bg-yellow-500 text-white;
+  }
+
+  .danger {
+    @apply bg-red-500 text-white transition duration-300;
+  }
+  .danger:hover {
+    @apply bg-red-600 text-white;
+  }
+
+  .dark {
+    @apply bg-gray-800 text-white transition duration-300;
+  }
+  .dark:hover {
+    @apply bg-gray-900 text-white;
+  }
+
+  .disabled {
+    @apply opacity-50 cursor-not-allowed transition duration-300;
+  }
+  .disabled:hover {
+    @apply opacity-50 cursor-not-allowed;
+  }
+}
